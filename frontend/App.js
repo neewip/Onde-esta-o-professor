@@ -1,20 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
+<<<<<<< HEAD
 import { Button, Image, StyleSheet, Text, View} from 'react-native';
+=======
+import { StyleSheet, Text, View, Image} from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
 
 export default function App() {
   return (
     <View style={styles.tudo}>
      <View style={styles.cabecalho}> Onde está o professor? </View>
+<<<<<<< HEAD
      
      <View style={styles.fundo}>
      <Image
     source={require("./assets/professor.png")}
 style={styles.imagem}
+=======
+
+<View style={styles.fundo}>
+     <Image
+    source={require("./assets/professores.png")}
+    style={styles.imagem}
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
     >
       </Image>
 
       <Image
     source={require("./assets/salas.png")}
+<<<<<<< HEAD
 style={styles.imagem}
     >
       </Image>
@@ -28,15 +44,27 @@ style={styles.imagem}
 
 <Button style={styles.botoes}> teste</Button>
 
+=======
+    style={styles.imagem}
+    >
+      </Image>
+</View>
+
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
 
 <View style={styles.fundo2}>
      <Image
     source={require("./assets/alocacoes.png")}
+<<<<<<< HEAD
 style={styles.imagem}
+=======
+    style={styles.imagem}
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
     >
       </Image>
 
       <Image
+<<<<<<< HEAD
     source={require("./assets/visoes.png")}
 style={styles.imagem}
     >
@@ -44,12 +72,23 @@ style={styles.imagem}
 
 </View>
 
+=======
+    source={require("./assets/interrogacao.png")}
+    style={styles.imagem}
+    >
+      </Image>
+</View>
+
+
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
       <StatusBar style="auto" />
        
      </View>
 
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -69,6 +108,7 @@ const styles = StyleSheet.create({
     fontFamily: 'georgia'
   },
   tudo:{
+<<<<<<< HEAD
     backgroundColor:'#a0aecd',
   },
   imagem:{
@@ -81,6 +121,18 @@ const styles = StyleSheet.create({
   justifyContent:'flex-end',
   display: 'flex',
   },
+=======
+    backgroundColor:'#a0aecd'
+  },
+
+  imagem: {
+   width:150,
+  height:150,
+  justifyContent: 'flex-end',
+
+  },
+
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
   fundo:{
     display: 'flex',
     justifyContent:'space-between',
@@ -97,5 +149,12 @@ const styles = StyleSheet.create({
     marginLeft:25,
     marginRight: 25,
     marginTop:100
+<<<<<<< HEAD
   },
 });
+=======
+  }
+
+
+});
+>>>>>>> 86a44743f39cde451daa51092048856569f8ecab
