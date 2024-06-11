@@ -65,6 +65,15 @@ const HomeScreen = () => {
           </TouchableOpacity>        </View>
       </View>
 
+      <View style={styles.fundo}>
+          <Image
+            source={require("../assets/Grupo.jpeg")}
+            style={styles.imagem}
+          />
+          <TouchableOpacity onPress={() => navigation.navigate('Sobre')} style={styles.button}>
+            <Text style={styles.buttontext}>Integrantes do Grupo</Text>
+          </TouchableOpacity>        </View>
+      
 
 
       <StatusBar style="auto" />
