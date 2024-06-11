@@ -3,15 +3,18 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, Alert, Button, TextInput, ScrollView } from 'react-native';
 
 const Visao = () => {
+
+  
+
   const [CampoNome, setCampoNome] = useState("");
 
   return (
     <ScrollView>
     <View style={styles.container}>
 
-      <View style={styles.cabecalho}> Onde está o professor? </View>
+      <View style={styles.cabecalho}> <Text> Onde está o professor? </Text> </View>
 
-      <View style={styles.visao1}> Consulta Visão </View>
+      <View style={styles.visao1}> <Text>Consulta Visão </Text></View>
 
 
       <TextInput

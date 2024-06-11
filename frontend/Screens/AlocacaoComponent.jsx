@@ -5,9 +5,9 @@ const Alocacao = () => {
   return (
     <View style={styles.container}>
 
-    <View style={styles.cabecalho}> Onde está o professor? </View>
+    <View style={styles.cabecalho}> <Text> Onde está o professor? </Text></View>
 
-    <View style={styles.lugar}> Alocação </View>
+    <View style={styles.lugar}> <Text> Alocação </Text> </View>
 
     <View style={styles.botao1}>
     <Button title="Pesquisar Alocações" onPress={() => Alert.alert('Disney amores!')}/>

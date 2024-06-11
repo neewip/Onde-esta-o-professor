@@ -5,9 +5,9 @@ const Sala = () => {
   return (
     <View style={styles.container}>
 
-    <View style={styles.cabecalho}> Onde está o professor? </View>
+    <View style={styles.cabecalho}> <Text> Onde está o professor? </Text> </View>
 
-    <View style={styles.sala}> Sala </View>
+    <View style={styles.sala}> <Text>Sala </Text></View>
 
     <View style={styles.botao1}>
     <Button title="Pesquisar Salas" onPress={() => Alert.alert('Disney amores!')}/>

@@ -1,16 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Alert, Button } from 'react-native';
 
+const API_URL = "http://10.136.42.67:3000/api";
+
 const Professor = () => {
   return (
     <View style={styles.container}>
 
-    <View style={styles.cabecalho}> Onde está o professor? </View>
+    <View style={styles.cabecalho}> <Text> Onde está o professor? </Text></View>
 
-    <View style={styles.prof}> Professores </View>
+    <View style={styles.prof}> <Text> Professores </Text> </View>
     
     <Button title="Pesquisar professores" onPress={() => Alert.alert('Disney amores!')}/>
         <View style={styles.botao}>
+          
     <Button title="Voltar" onPress={() => Alert.alert('Disney amores!')}/>
     </View>
 
