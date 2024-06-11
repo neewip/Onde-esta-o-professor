@@ -7,12 +7,17 @@ const Alocacao = () => {
 
     <View style={styles.cabecalho}> Onde está o professor? </View>
 
-    <View style={styles.prof}> Professores </View>
-    
-    <Button title="Pesquisar professores" onPress={() => Alert.alert('Disney amores!')}/>
+    <View style={styles.lugar}> Alocação </View>
+
+    <View style={styles.botao1}>
+    <Button title="Pesquisar Alocações" onPress={() => Alert.alert('Disney amores!')}/>
+    </View>
+
         <View style={styles.botao}>
     <Button title="Voltar" onPress={() => Alert.alert('Disney amores!')}/>
     </View>
+
+    <View style={styles.rodape}></View>
 
      <View style={styles.container}>
       <StatusBar style="auto"/>
@@ -40,20 +45,34 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     fontFamily: 'georgia'
   },
-  prof:{
+  lugar:{
     color: 'white',
     fontSize: 25,
     fontFamily: 'georgia',
     alignItems: 'center',
     justifyContent:'center',
-    marginTop: 15
+    marginTop: 25
   },
   botao: {
     backgroundColor: '#a0aecd',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 250,
-    color: 'pink'
+    marginTop: 280
+  },
+  botao1: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 15
+  },
+  rodape: {
+    backgroundColor: 'black',
+    width: 400,
+    height: 70,
+    alignItems: 'center',
+    fontSize: 30,
+    justifyContent:'center',
+    marginTop: 30
+    
   }
 });
 

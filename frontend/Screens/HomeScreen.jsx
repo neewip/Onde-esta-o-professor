@@ -1,90 +1,81 @@
-import { React, useState } from 'react';
-import { View, Button, ImageBackground } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, Pressable } from 'react-native';
+import { StyleSheet, Text, ScrollView, Button } from 'react-native';
 import { StatusBar } from 'react-native';
 import { Image } from 'react-native';
-import { ScrollView } from 'react-native';
+import { TouchableOpacity } from 'react-native';
+
 
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const [pressed, setPressed] = useState(false);
-
 
   return (
     <ScrollView style={styles.tudo}>
-
       <View style={styles.cabecalho}>
         <Text style={styles.texto}>Onde está o professor?</Text>
       </View>
 
-      <View style={styles.fundo}>
-        <Pressable
-          onPressIn={() => navigation.navigate('Professor')}>
-          <ImageBackground
+      <View >
+
+        <View style={styles.fundo}>
+          <Image
             source={require("../assets/professores.png")}
             style={styles.imagem}
-          >
-            <Text style={styles.texto2}>Consulta de professores</Text>
-          </ImageBackground>
+          />
+          <TouchableOpacity onPress={() => navigation.navigate('Professor')} style={styles.button}>
+            <Text style={styles.buttontext}>Consulta de professores</Text>
+          </TouchableOpacity>
+        </View>
 
-        </Pressable>
-      </View>
-
-      <Pressable
-          onPressIn={() => navigation.navigate('Professor')}>
-          <ImageBackground
-            source={require("../assets/professores.png")}
+        <View style={styles.fundo}>
+          <Image
+            source={require("../assets/salas.png")}
             style={styles.imagem}
-          >
-            <Text style={styles.texto2}>Consulta de professores</Text>
-          </ImageBackground>
+          />
+          <TouchableOpacity onPress={() => navigation.navigate('Sala')} style={styles.button}>
+            <Text style={styles.buttontext}>Consulta de Salas</Text>
+          </TouchableOpacity>
+        </View>
 
-        </Pressable>
-
-
-      <Image
-        source={require("../assets/salas.png")}
-        style={styles.imagem}
-      />
-      <Button title="Consulta de salas" onPress={() => navigation.navigate('Sala')} />
-      <View style={styles.fundo2}>
-        <Image
-          source={require("../assets/alocacoes.png")}
-          style={styles.imagem}
-        />
-        <Button title="Consulta de Alocações" onPress={() => navigation.navigate('Alocacao')} />
-        <Image
-          source={require("../assets/interrogacao.png")}
-          style={styles.imagem}
-        />
-        <Button title="Consulta de visão de alocações" onPress={() => navigation.navigate('Visao')} />
       </View>
 
 
+      <View >
+
+        <View style={styles.fundo}>
+          <Image
+            source={require("../assets/alocacoes.png")}
+            style={styles.imagem}
+          />
+          <TouchableOpacity onPress={() => navigation.navigate('Alocacao')} style={styles.button}>
+            <Text style={styles.buttontext}>Consulta de Alocações</Text>
+          </TouchableOpacity>
+        </View>
 
 
-
+        <View style={styles.fundo}>
+          <Image
+            source={require("../assets/interrogacao.png")}
+            style={styles.imagem}
+          />
+          <TouchableOpacity onPress={() => navigation.navigate('Visao')} style={styles.button}>
+            <Text style={styles.buttontext}>Consulta de visão de alocações</Text>
+          </TouchableOpacity>        </View>
+      </View>
 
 
 
       <StatusBar style="auto" />
     </ScrollView>
-
-
   );
 };
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
   cabecalho: {
     backgroundColor: 'black',
     width: "100%",
@@ -99,42 +90,41 @@ const styles = StyleSheet.create({
     fontSize: 30,
 
   },
-
-  texto2: {
-    color: "black",
-    fontFamily: 'georgia',
-    width: "100%",
-    backgroundColor: "white",
-    height: 30,
-  },
   tudo: {
     backgroundColor: '#a0aecd'
   },
 
   imagem: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
     justifyContent: 'flex-end',
+    border: "2px solid black",
+
 
   },
 
   fundo: {
     display: 'flex',
-    justifyContent: 'space-between',
-    flexDirection: 'column',
-    marginLeft: 25,
-    marginRight: 25,
-    marginTop: 25,
     color: "black",
+    alignItems: "center",
+    marginTop: 30
   },
 
-  fundo2: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    marginLeft: 25,
-    marginRight: 25,
-    marginTop: 100
+
+
+  button: {
+    alignItems: 'center',
+    backgroundColor: 'black',
+    padding: 10,
+    width: "50%",
+    border: "2px solid black",
+  },
+
+  buttontext: {
+    fontFamily: 'georgia',
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
   }
 
 

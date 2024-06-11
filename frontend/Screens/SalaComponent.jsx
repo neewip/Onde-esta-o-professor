@@ -7,9 +7,12 @@ const Sala = () => {
 
     <View style={styles.cabecalho}> Onde está o professor? </View>
 
-    <View style={styles.prof}> Professores </View>
-    
-    <Button title="Pesquisar professores" onPress={() => Alert.alert('Disney amores!')}/>
+    <View style={styles.sala}> Sala </View>
+
+    <View style={styles.botao1}>
+    <Button title="Pesquisar Salas" onPress={() => Alert.alert('Disney amores!')}/>
+    </View>
+
         <View style={styles.botao}>
     <Button title="Voltar" onPress={() => Alert.alert('Disney amores!')}/>
     </View>
@@ -40,20 +43,34 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     fontFamily: 'georgia'
   },
-  prof:{
+  sala:{
     color: 'white',
     fontSize: 25,
     fontFamily: 'georgia',
     alignItems: 'center',
     justifyContent:'center',
-    marginTop: 15
+    marginTop: 25
   },
   botao: {
     backgroundColor: '#a0aecd',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 250,
-    color: 'pink'
+    marginTop: 280
+  },
+  botao1: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 15
+  },
+  rodape: {
+    backgroundColor: 'black',
+    width: 400,
+    height: 70,
+    alignItems: 'center',
+    fontSize: 30,
+    justifyContent:'center',
+    marginTop: 30
+    
   }
 });
 
