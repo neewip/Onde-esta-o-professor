@@ -1,32 +1,48 @@
-import React from 'react';
-import { View, Button } from 'react-native';
+import { React, useState } from 'react';
+import { View, Button, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, Pressable } from 'react-native';
 import { StatusBar } from 'react-native';
 import { Image } from 'react-native';
-
+import { ScrollView } from 'react-native';
 
 
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const [pressed, setPressed] = useState(false);
+
 
   return (
-    <View style={styles.tudo}>
+    <ScrollView style={styles.tudo}>
+
       <View style={styles.cabecalho}>
         <Text style={styles.texto}>Onde está o professor?</Text>
       </View>
 
-
       <View style={styles.fundo}>
+        <Pressable
+          onPressIn={() => navigation.navigate('Professor')}>
+          <ImageBackground
+            source={require("../assets/professores.png")}
+            style={styles.imagem}
+          >
+            <Text style={styles.texto2}>Consulta de professores</Text>
+          </ImageBackground>
 
-        <Image
-          source={require("../assets/professores.png")}
-          style={styles.imagem}
-        />
-        <Button title="Consulta de professores" onPress={() => navigation.navigate('Professor')}
-          color="white" />
-
+        </Pressable>
       </View>
+
+      <Pressable
+          onPressIn={() => navigation.navigate('Professor')}>
+          <ImageBackground
+            source={require("../assets/professores.png")}
+            style={styles.imagem}
+          >
+            <Text style={styles.texto2}>Consulta de professores</Text>
+          </ImageBackground>
+
+        </Pressable>
+
 
       <Image
         source={require("../assets/salas.png")}
@@ -45,8 +61,18 @@ const HomeScreen = () => {
         />
         <Button title="Consulta de visão de alocações" onPress={() => navigation.navigate('Visao')} />
       </View>
+
+
+
+
+
+
+
+
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
+
+
   );
 };
 
@@ -72,6 +98,14 @@ const styles = StyleSheet.create({
     fontFamily: 'georgia',
     fontSize: 30,
 
+  },
+
+  texto2: {
+    color: "black",
+    fontFamily: 'georgia',
+    width: "100%",
+    backgroundColor: "white",
+    height: 30,
   },
   tudo: {
     backgroundColor: '#a0aecd'
