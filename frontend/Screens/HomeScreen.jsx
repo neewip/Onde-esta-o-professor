@@ -21,7 +21,7 @@ const HomeScreen = () => {
 
         <View style={styles.fundo}>
           <Image
-            source={require("../assets/professores.png")}
+            source={require("../assets/professor.jpg")}
             style={styles.imagem}
           />
           <TouchableOpacity onPress={() => navigation.navigate('Professor')} style={styles.button}>
@@ -31,7 +31,7 @@ const HomeScreen = () => {
 
         <View style={styles.fundo}>
           <Image
-            source={require("../assets/salas.png")}
+            source={require("../assets/salas.jpg")}
             style={styles.imagem}
           />
           <TouchableOpacity onPress={() => navigation.navigate('Sala')} style={styles.button}>
