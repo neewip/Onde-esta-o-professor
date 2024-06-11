@@ -1,27 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Alert, Button } from 'react-native';
+import { useState, useEffect } from 'react';
+import { View, Button, Text, FlatList, StyleSheet, StatusBar } from "react-native";
 
-const API_URL = "http://10.136.42.67:3000/api";
+const API_URL = "http://10.136.42.52:3000";
 
-const Professor = () => {
+export default function ConsultarProfessor() {
+  const [professores, setProfessores] = useState([]); // Initialize professores as an empty array
+  const [error, setError] = useState(null);
+
+  const fetchProf = async () => {
+    try {
+      const response = await fetch(`${API_URL}/professor/`);
+      if (!response.ok) {
+        throw new Error(`Erro ao buscar o(a) professor(a): ${response.status}`);
+      }
+      const data = await response.json();
+      setProfessores(data);
+      setError(null);
+    } catch (error) {
+      console.error("Erro ao buscar o(a) professor(a):", error);
+      setError("Não foi possível buscar o(a) professor(a) desejado.");
+    }
+  };
+
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor='#F18F01' />
 
-    <View style={styles.cabecalho}> <Text> Onde está o professor? </Text></View>
+      <View style={styles.cabecalho}>
+      <Text style={styles.texto}> Onde está o professor? </Text>
+      </View>
 
-    <View style={styles.prof}> <Text> Professores </Text> </View>
-    
-    <Button title="Pesquisar professores" onPress={() => Alert.alert('Disney amores!')}/>
-        <View style={styles.botao}>
-          
-    <Button title="Voltar" onPress={() => Alert.alert('Disney amores!')}/>
-    </View>
+      <Text style={styles.prof}> Professores </Text>
 
-     <View style={styles.container}>
-      <StatusBar style="auto"/>
-       
-     </View>
-     
+      <Button title="Consultar professores" onPress={fetchProf} color='black'/>
+
+      <FlatList
+        data={professores} // Use the professores state variable
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.prof}>
+            <Text>ID: {item.id}</Text>
+            <Text>Nome do Professor: {item.nome}</Text>
+            <Text>Telefone: {item.telefone}</Text>
+          </View>
+        )}
+      />
+
+      <StatusBar style="auto" />
+
+      <View style={styles.rodape}></View>
+
+      {error && <Text style={styles.error}>{error}</Text>}
     </View>
   );
 }
@@ -35,29 +64,39 @@ const styles = StyleSheet.create({
   },
   cabecalho: {
     backgroundColor: 'black',
-    width: 400,
+    width: "100%",
     height: 150,
     color: 'white',
     alignItems: 'center',
-    fontSize: 30,
-    justifyContent:'center',
-    fontFamily: 'georgia'
+    justifyContent: 'center',
   },
-  prof:{
+  texto: {
+    color: "white",
+    fontFamily: 'georgia',
+    fontSize: 30,
+  },
+  prof: {
     color: 'white',
     fontSize: 25,
     fontFamily: 'georgia',
-    alignItems: 'center',
-    justifyContent:'center',
+    textAlign: 'center',
     marginTop: 15
   },
   botao: {
     backgroundColor: '#a0aecd',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 250,
+    marginTop: 290,
     color: 'pink'
+  },
+  rodape: {
+    backgroundColor: 'black',
+    width: "100%",
+    height: 45,
+    alignItems: 'center',
+    fontSize: 30,
+    justifyContent: 'center',
+    marginTop: 30
+
   }
 });
-
-export default Professor;
