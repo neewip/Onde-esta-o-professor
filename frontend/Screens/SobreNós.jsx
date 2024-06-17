@@ -6,7 +6,7 @@ const Sobre = () => {
   
   return (
 <ScrollView style={styles.container}>
-<View style={styles.cabecalho}> <Text style={styles.texto}>Integrantes do Grupo</Text></View>
+<View style={styles.cabecalho}><Text style={styles.texto}>Integrantes do Grupo</Text></View>
 <View style={styles.fundo}>
 <View>
       <Modal style={styles.fundo}
@@ -21,7 +21,7 @@ const Sobre = () => {
           <Button
             title="Fechar"
             onPress={() => setModalVisible(false)}
-            color="black" // Change the button color here
+            color="black"
           />
         </View>
       </Modal>
@@ -33,7 +33,7 @@ style={styles.imagemVit}
       <Button 
         title="Vitória"
         onPress={() => setModalVisible(true)}
-        color="black" // You can also change the color of this button
+        color="black" 
       />
     </View>
 
@@ -49,7 +49,7 @@ style={styles.imagemVit}
     <Button
       title="Fechar"
       onPress={() => setModalVisible(false)}
-      color="black" // Change the button color here
+      color="black" 
     />
   </View>
 </Modal>
@@ -61,7 +61,7 @@ style={styles.imagemIsa}
 <Button 
   title="Isabela Mariano"
   onPress={() => setModalVisible(true)}
-  color="black" // You can also change the color of this button
+  color="black" 
 />
 
 
@@ -77,7 +77,7 @@ style={styles.imagemIsa}
     <Button
       title="Fechar"
       onPress={() => setModalVisible(false)}
-      color="black" // Change the button color here
+      color="black"
     />
   </View>
 </Modal>
@@ -89,7 +89,7 @@ style={styles.imagemLu}
 <Button 
   title="Luis"
   onPress={() => setModalVisible(true)}
-  color="black" // You can also change the color of this button
+  color="black" 
 />
 
 
@@ -106,7 +106,7 @@ style={styles.imagemLu}
     <Button
       title="Fechar"
       onPress={() => setModalVisible(false)}
-      color="black" // Change the button color here
+      color="black"
     />
   </View>
 </Modal>
@@ -118,7 +118,7 @@ style={styles.imagemAn}
 <Button 
   title="Ângelo"
   onPress={() => setModalVisible(true)}
-  color="black" // You can also change the color of this button
+  color="black" 
 />
 
 
@@ -134,7 +134,7 @@ style={styles.imagemAn}
     <Button
       title="Fechar"
       onPress={() => setModalVisible(false)}
-      color="black" // Change the button color here
+      color="black"
     />
   </View>
 </Modal>
@@ -146,7 +146,7 @@ style={styles.imagemNat}
 <Button 
   title="Nathalia"
   onPress={() => setModalVisible(true)}
-  color="black" // You can also change the color of this button
+  color="black" 
 />
 
 
@@ -158,13 +158,11 @@ style={styles.imagemNat}
 >
 
   <View style={styles.modalView}>
-    <Text>Obrigado por entrar em nosso site! 
-       
-    </Text>
+    <Text>Obrigado por entrar em nosso site!</Text>
     <Button
       title="Fechar"
       onPress={() => setModalVisible(false)}
-      color="black" // Change the button color here
+      color="black" 
     />
   </View>
 </Modal>
@@ -176,7 +174,7 @@ style={styles.imagemSop}
 <Button style={styles.tamanho}
   title="Sophia"
   onPress={() => setModalVisible(true)}
-  color="black" // You can also change the color of this button
+  color="black" 
 />
 </View>
 </ScrollView>
@@ -217,16 +215,7 @@ padding: 12
     backgroundColor:'#a0aecd',
    
   },
-  cabecalho: {
-    backgroundColor: 'black',
-    width: 400,
-    height: 150,
-    color: 'white',
-    alignItems: 'center',
-    fontSize: 30,
-    justifyContent:'center',
-    fontFamily: 'georgia'
-  },
+
   tudo:{
     backgroundColor:'#a0aecd',
   },
@@ -237,7 +226,7 @@ padding: 12
     display: 'flex',
     justifyContent: 'center',
     flexDirection:'column',
-    marginLeft: 110,
+    margin: 'auto',
     marginTop:25
   },
 
@@ -248,7 +237,7 @@ padding: 12
     display: 'flex',
     justifyContent: 'center',
     flexDirection:'column',
-    marginLeft: 110,
+    margin: 'auto',
     marginTop:25
   },
 
@@ -259,7 +248,7 @@ padding: 12
     display: 'flex',
     justifyContent: 'center',
     flexDirection:'column',
-    marginLeft: 110,
+    margin: 'auto',
     marginTop:25
   },
 
@@ -270,7 +259,7 @@ padding: 12
     display: 'flex',
     justifyContent: 'center',
     flexDirection:'column',
-    marginLeft: 110,
+    margin: 'auto',
     marginTop:25
   },
 
@@ -281,7 +270,7 @@ padding: 12
     display: 'flex',
     justifyContent: 'center',
     flexDirection:'column',
-    marginLeft: 110,
+    margin: 'auto',
     marginTop:25
   },
 
@@ -293,16 +282,22 @@ padding: 12
     display: 'flex',
     justifyContent: 'center',
     flexDirection:'column',
-    marginLeft: 110,
+    margin: 'auto',
     marginTop:25
   },
 
-  texto:{
-  fontSize: 20,
-  color: 'white',
-  justifyContent:'flex-end',
-  display: 'flex',
-  fontFamily:'georgia'
+  cabecalho: {
+    backgroundColor: 'black',
+    width: "100%",
+    height: 150,
+    color: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  texto: {
+    color: "white",
+    fontFamily: 'serif',
+    fontSize: 30,
   },
   
 });

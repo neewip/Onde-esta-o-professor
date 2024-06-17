@@ -14,12 +14,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Professor" component={Professor} />
-        <Stack.Screen name="Sala" component={Sala} />
-        <Stack.Screen name="Alocacao" component={Alocacao} />
-        <Stack.Screen name="Visao" component={Visao} />
-        <Stack.Screen name="Sobre" component={Sobre} />
+        <Stack.Screen name="Home" component={HomeScreen}/>
+        <Stack.Screen name="Professor" component={Professor}/>
+        <Stack.Screen name="Sala" component={Sala}/>
+        <Stack.Screen name="Alocacao" component={Alocacao}/>
+        <Stack.Screen name="Visao" component={Visao}/>
+        <Stack.Screen name="Sobre" component={Sobre}/>
 
       </Stack.Navigator>
     </NavigationContainer>

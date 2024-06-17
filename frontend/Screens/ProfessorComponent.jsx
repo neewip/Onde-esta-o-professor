@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { View, Button, Text, FlatList, StyleSheet, StatusBar } from "react-native";
 
-const API_URL = "http://10.136.42.52:3000";
+const API_URL = "http://10.136.37.30:3000"; 
 
 export default function ConsultarProfessor() {
-  const [professores, setProfessores] = useState([]); // Initialize professores as an empty array
+  const [professores, setProfessores] = useState([]); 
   const [error, setError] = useState(null);
 
   const fetchProf = async () => {
@@ -26,16 +26,14 @@ export default function ConsultarProfessor() {
     <View style={styles.container}>
       <StatusBar backgroundColor='#F18F01' />
 
-      <View style={styles.cabecalho}>
-      <Text style={styles.texto}> Onde está o professor? </Text>
-      </View>
+      <View style={styles.cabecalho}><Text style={styles.texto}>Onde está o professor?</Text></View>
 
-      <Text style={styles.prof}> Professores </Text>
+      <Text style={styles.prof}>Professores</Text>
 
       <Button title="Consultar professores" onPress={fetchProf} color='black'/>
 
       <FlatList
-        data={professores} // Use the professores state variable
+        data={professores}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.prof}>
@@ -48,7 +46,7 @@ export default function ConsultarProfessor() {
 
       <StatusBar style="auto" />
 
-      <View style={styles.rodape}></View>
+      <View style={styles.rodape}><Text></Text> </View>
 
       {error && <Text style={styles.error}>{error}</Text>}
     </View>
@@ -72,13 +70,13 @@ const styles = StyleSheet.create({
   },
   texto: {
     color: "white",
-    fontFamily: 'georgia',
+    fontFamily: 'serif',
     fontSize: 30,
   },
   prof: {
     color: 'white',
     fontSize: 25,
-    fontFamily: 'georgia',
+    fontFamily: 'serif',
     textAlign: 'center',
     marginTop: 15
   },

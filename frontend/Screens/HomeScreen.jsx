@@ -13,9 +13,7 @@ const HomeScreen = () => {
 
   return (
     <ScrollView style={styles.tudo}>
-      <View style={styles.cabecalho}>
-        <Text style={styles.texto}>Onde está o professor?</Text>
-      </View>
+      <View style={styles.cabecalho}><Text style={styles.texto}>Onde está o professor?</Text></View>
 
       <View >
 
@@ -66,14 +64,14 @@ const HomeScreen = () => {
       </View>
 
       <View style={styles.fundo}>
-          <Image
-            source={require("../assets/Grupo.jpeg")}
-            style={styles.imagem}
-          />
-          <TouchableOpacity onPress={() => navigation.navigate('Sobre')} style={styles.button}>
-            <Text style={styles.buttontext}>Integrantes do Grupo</Text>
-          </TouchableOpacity>        </View>
-      
+        <Image
+          source={require("../assets/Grupo.jpeg")}
+          style={styles.imagem}
+        />
+        <TouchableOpacity onPress={() => navigation.navigate('Sobre')} style={styles.button}>
+          <Text style={styles.buttontext}>Integrantes do Grupo</Text>
+        </TouchableOpacity>        </View>
+
 
 
       <StatusBar style="auto" />
@@ -95,7 +93,7 @@ const styles = StyleSheet.create({
   },
   texto: {
     color: "white",
-    fontFamily: 'georgia',
+    fontFamily: 'serif',
     fontSize: 30,
 
   },
@@ -130,7 +128,7 @@ const styles = StyleSheet.create({
   },
 
   buttontext: {
-    fontFamily: 'georgia',
+    fontFamily: 'serif',
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
